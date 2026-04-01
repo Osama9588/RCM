@@ -60,11 +60,11 @@ const AdjudicationAgent = () => {
     }
   };
 
-  const getStatusColor = (status) => {
-    if (status === "Approved") return "text-green-400";
-    if (status === "Denied") return "text-red-400";
-    return "text-yellow-400";
-  };
+  // const getStatusColor = (status) => {
+  //   if (status === "Approved") return "text-green-400";
+  //   if (status === "Denied") return "text-red-400";
+  //   return "text-yellow-400";
+  // };
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
@@ -156,11 +156,10 @@ const AdjudicationAgent = () => {
           {Object.entries(PAYER_CONTRACTS).map(([payer, rate]) => (
             <div
               key={payer}
-              className={`rounded-xl p-3 text-center border transition-all ${
-                currentPatient?.provider === payer
+              className={`rounded-xl p-3 text-center border transition-all ${currentPatient?.provider === payer
                   ? "bg-blue-900/40 border-blue-600"
                   : "bg-gray-800 border-gray-700"
-              }`}
+                }`}
             >
               <p className="text-lg font-bold text-white">
                 {(rate * 100).toFixed(0)}%
@@ -205,11 +204,10 @@ const AdjudicationAgent = () => {
               🚀 Final RCM Settlement Report
             </h3>
             <span
-              className={`text-sm font-bold px-4 py-1.5 rounded-full ${
-                result.status === "Approved"
+              className={`text-sm font-bold px-4 py-1.5 rounded-full ${result.status === "Approved"
                   ? "bg-green-800 text-green-300"
                   : "bg-red-800 text-red-300"
-              }`}
+                }`}
             >
               {result.status}
             </span>

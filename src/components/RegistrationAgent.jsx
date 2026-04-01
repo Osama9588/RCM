@@ -9,7 +9,7 @@ const RegistrationAgent = () => {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
-  const [manualMode, setManualMode] = useState(false);
+  // const [manualMode, setManualMode] = useState(false);
   const [manualId, setManualId] = useState("");
 
   const handleFileChange = (e) => {
@@ -249,22 +249,20 @@ Format:
       {/* Result */}
       {result && (
         <div
-          className={`rounded-2xl p-6 border space-y-4 ${
-            result.accessGranted
+          className={`rounded-2xl p-6 border space-y-4 ${result.accessGranted
               ? "bg-green-900/20 border-green-700"
               : "bg-red-900/20 border-red-700"
-          }`}
+            }`}
         >
           <div className="flex items-center justify-between">
             <h3 className="font-bold text-lg">
               {result.accessGranted ? "✅ Patient Verified" : "❌ Verification Failed"}
             </h3>
             <span
-              className={`text-xs px-3 py-1 rounded-full font-semibold ${
-                result.accessGranted
+              className={`text-xs px-3 py-1 rounded-full font-semibold ${result.accessGranted
                   ? "bg-green-800 text-green-300"
                   : "bg-red-800 text-red-300"
-              }`}
+                }`}
             >
               {result.verificationStatus}
             </span>
